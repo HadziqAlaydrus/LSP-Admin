@@ -1,16 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navigationbar from './components/NavigationBar';
+import Home from './pages/Home';
+import Makanan from './pages/Makanan.jsx';
+import Minuman from './pages/Minuman.jsx';
+import Appetizer from './pages/Appetizer.Jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <section>
-      
-    </section>
-  )
+    <Router>
+      <Navigationbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/appetizer" element={<Appetizer />} />
+        <Route path="/makanan" element={<Makanan />} />
+        <Route path="/minuman" element={<Minuman />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
